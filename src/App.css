@@ -1,0 +1,44 @@
+.container {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 5px 5px 15px 5px rgb(199, 192, 192);
+}
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style icon */
+.inner-addon .icon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .icon {
+  left: 0px;
+}
+.right-addon .icon {
+  right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+  padding-left: 30px;
+}
+.right-addon input {
+  padding-right: 30px;
+}
+
+.pageactive {
+  background: rgb(231, 97, 97);
+  color: aliceblue;
+}
+
+.pageactive:hover {
+  background: crimson;
+  color: aliceblue;
+}

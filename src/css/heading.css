@@ -1,0 +1,9 @@
+.heading h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-bottom: 2px solid gray;
+  box-shadow: 2px 2px 2px 2px rgb(214, 214, 214);
+}
