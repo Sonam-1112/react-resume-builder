@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import Heading from "./Heading";
 import SaveNext from "./SaveNext";
 import { InfoContext } from "./InfoContext";
+import { withRouter } from "react-router-dom";
 
 function Personal() {
   const { formData, setFormData } = useContext(InfoContext);
@@ -223,4 +224,4 @@ function Personal() {
   );
 }
 
-export default Personal;
+export default withRouter(Personal);
