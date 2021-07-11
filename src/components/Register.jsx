@@ -1,10 +1,12 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { login_img } from "../images/index";
 import "../css/login_reg.css";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { InfoContext } from "./InfoContext";
 
 function Register() {
+  const { formData, setFormData } = useContext(InfoContext);
   const emailRef = useRef();
   const passwordRef = useRef();
   const conpasswordRef = useRef();
@@ -20,6 +22,13 @@ function Register() {
     signup(emailRef.current.value, passwordRef.current.value)
       .then((res) => {
         console.log("then");
+        setFormData({
+          ...formData,
+          isAuth: {
+            ...formData.isAuth,
+            isAuthValue: true,
+          },
+        });
         history.push("/personal");
       })
       .catch((err) => {

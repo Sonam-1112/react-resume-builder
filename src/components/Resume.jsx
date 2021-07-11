@@ -7,7 +7,7 @@ function Resume() {
     e.preventDefault();
     console.log(formData.personal.firstNameValue);
     console.log(formData.personal.lastNameValue);
-    // window.print();
+    window.print();
   };
   return (
     <>

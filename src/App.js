@@ -91,7 +91,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <div>
-                <Navbar/>
+                <Navbar isAuth={formData.isAuth.isAuthValue}/>
                 <InfoContext.Provider value={{formData,setFormData}}>
                     <Route path="/"/>
                     <Route exact path="/" component={Login}/>

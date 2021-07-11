@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
-function Navbar() {
-  return (
+function Navbar({ isAuth }) {
+  return isAuth ? (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
@@ -77,7 +77,7 @@ function Navbar() {
         </div>
       </nav>
     </div>
-  );
+  ) : null;
 }
 
 export default Navbar;
