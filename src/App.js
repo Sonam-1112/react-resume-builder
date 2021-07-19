@@ -31,7 +31,7 @@ const App = () => {
             twitterValue:'',
             instagramValue:''
         },
-        educational: {
+        educational: [{
             schoolNameValue:'',
             schoolFromDateValue:'',
             schoolToDateValue:'',
@@ -42,7 +42,7 @@ const App = () => {
             clgToDateValue:'',
             clgQualificationValue:'',
             clgDescriptionValue:''
-        },
+        }],
         projects:{
             pro1TitleValue:'',
             pro1LinkValue:'',

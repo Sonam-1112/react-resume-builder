@@ -143,117 +143,131 @@ function Educational() {
     educationContainer.insertBefore(divRow, addMoreEducationBtn);
   };
 
+  const handleChange = (value, key, fieldName) => {
+    const educationData = [...formData.educational];
+    educationData[key][fieldName] = value;
+    console.log(educationData, "educationData");
+    setFormData({
+      ...formData,
+      educational: [...educationData],
+    });
+  };
+
   return (
     <div className="container">
       <Heading headingName="Educational Details" />
       <div className="text-center" id="educationContainer">
-        <div className="row">
-          <div className="px-5">
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-school"></i>
-              <input
-                type="text"
-                id="schoolNameField"
-                placeholder="School Name"
-                className="form-control"
-                required={true}
-                value={formData.educational.schoolNameValue}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    educational: {
-                      ...formData.educational,
-                      schoolNameValue: e.target.value,
-                    },
-                  });
-                }}
-              />
-            </div>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-calendar-alt"></i>
-              <input
-                type="text"
-                id="schoolFromDateField"
-                placeholder="From Date"
-                className="form-control"
-                required={true}
-                value={formData.educational.schoolFromDateValue}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    educational: {
-                      ...formData.educational,
-                      schoolFromDateValue: e.target.value,
-                    },
-                  });
-                }}
-              />
-            </div>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-calendar-alt"></i>
-              <input
-                type="text"
-                id="schoolToDateField"
-                placeholder="To Date"
-                className="form-control"
-                required={true}
-                value={formData.educational.schoolToDateValue}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    educational: {
-                      ...formData.educational,
-                      schoolToDateValue: e.target.value,
-                    },
-                  });
-                }}
-              />
-            </div>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-graduation-cap"></i>
-              <input
-                type="text"
-                id="schoolQualificationField"
-                placeholder="Qualification"
-                className="form-control"
-                required={true}
-                value={formData.educational.schoolQualificationValue}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    educational: {
-                      ...formData.educational,
-                      schoolQualificationValue: e.target.value,
-                    },
-                  });
-                }}
-              />
-            </div>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-info-circle"></i>
-              <textarea
-                type="text"
-                id="schoolDescriptionField"
-                placeholder="Description"
-                className="form-control"
-                required={true}
-                value={formData.educational.schoolDescriptionValue}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    educational: {
-                      ...formData.educational,
-                      schoolDescriptionValue: e.target.value,
-                    },
-                  });
-                }}
-              ></textarea>
+        {formData.educational.map((val, key) => (
+          <div className="row" key={key}>
+            <div className="px-5">
+              <div className="inner-addon right-addon form-group mt-4">
+                <i className="icon fas fa-school"></i>
+                <input
+                  type="text"
+                  id="schoolNameField"
+                  placeholder="School Name"
+                  className="form-control"
+                  required={true}
+                  value={formData.educational[key].schoolNameValue}
+                  onChange={(e) => {
+                    handleChange(e.target.value, key, "schoolNameValue");
+                  }}
+                />
+              </div>
+              <div className="inner-addon right-addon form-group mt-4">
+                <i className="icon fas fa-calendar-alt"></i>
+                <input
+                  type="text"
+                  id="schoolFromDateField"
+                  placeholder="From Date"
+                  className="form-control"
+                  required={true}
+                  value={formData.educational[key].schoolFromDateValue}
+                  onChange={(e) => {
+                    handleChange(e.target.value, key, "schoolFromDateValue");
+                  }}
+                />
+              </div>
+              <div className="inner-addon right-addon form-group mt-4">
+                <i className="icon fas fa-calendar-alt"></i>
+                <input
+                  type="text"
+                  id="schoolToDateField"
+                  placeholder="To Date"
+                  className="form-control"
+                  required={true}
+                  value={formData.educational.schoolToDateValue}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      educational: {
+                        ...formData.educational,
+                        schoolToDateValue: e.target.value,
+                      },
+                    });
+                  }}
+                />
+              </div>
+              <div className="inner-addon right-addon form-group mt-4">
+                <i className="icon fas fa-graduation-cap"></i>
+                <input
+                  type="text"
+                  id="schoolQualificationField"
+                  placeholder="Qualification"
+                  className="form-control"
+                  required={true}
+                  value={formData.educational.schoolQualificationValue}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      educational: {
+                        ...formData.educational,
+                        schoolQualificationValue: e.target.value,
+                      },
+                    });
+                  }}
+                />
+              </div>
+              <div className="inner-addon right-addon form-group mt-4">
+                <i className="icon fas fa-info-circle"></i>
+                <textarea
+                  type="text"
+                  id="schoolDescriptionField"
+                  placeholder="Description"
+                  className="form-control"
+                  required={true}
+                  value={formData.educational.schoolDescriptionValue}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      educational: {
+                        ...formData.educational,
+                        schoolDescriptionValue: e.target.value,
+                      },
+                    });
+                  }}
+                ></textarea>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
         <div className="text-center mt-5" id="addMoreEducationBtn">
           <button
-            onClick={(e) => addMoreEducationFunc(e)}
+            onClick={(e) => {
+              setFormData({
+                ...formData,
+                educational: [
+                  ...formData.educational,
+                  {
+                    schoolNameValue: "",
+                    schoolFromDateValue: "",
+                    schoolToDateValue: "",
+                    schoolQualificationValue: "",
+                    schoolDescriptionValue: "",
+                  },
+                ],
+              });
+            }}
             className="btn btn-warning"
           >
             Add More School
