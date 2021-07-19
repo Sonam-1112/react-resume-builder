@@ -8,15 +8,122 @@ function Experience() {
   const experienceFunc = () => {
     console.log("ExperinceFunc");
   };
+  const addMoreExpFunc = () => {
+    // Row Div
+    let divRow = document.createElement("div");
+    divRow.classList.add("row");
+
+    // Exp Div
+    let divExp = document.createElement("div");
+    divExp.classList.add("px-5");
+
+    // Experience Differentiable horizontal line
+    let hr = document.createElement("hr");
+
+    // InstituteName Field
+    let divInstituteNameField = document.createElement("div");
+    divInstituteNameField.classList.add("inner-addon");
+    divInstituteNameField.classList.add("right-addon");
+    divInstituteNameField.classList.add("form-group");
+    divInstituteNameField.classList.add("mt-4");
+
+    let instituteNameIcon = document.createElement("i");
+    instituteNameIcon.classList.add("icon");
+    instituteNameIcon.classList.add("fas");
+    instituteNameIcon.classList.add("fa-building");
+
+    let instituteNameInputField = document.createElement("input");
+    instituteNameInputField.classList.add("form-control");
+    instituteNameInputField.setAttribute("type", "text");
+    instituteNameInputField.setAttribute("placeholder", "Institute Name");
+
+    divInstituteNameField.appendChild(instituteNameIcon);
+    divInstituteNameField.appendChild(instituteNameInputField);
+
+    // InstitutePosition Field
+    let divInstitutePositionField = document.createElement("div");
+    divInstitutePositionField.classList.add("inner-addon");
+    divInstitutePositionField.classList.add("right-addon");
+    divInstitutePositionField.classList.add("form-group");
+    divInstitutePositionField.classList.add("mt-4");
+
+    let institutePositionIcon = document.createElement("i");
+    institutePositionIcon.classList.add("icon");
+    institutePositionIcon.classList.add("fas");
+    institutePositionIcon.classList.add("fa-user-tie");
+
+    let institutePositionInputField = document.createElement("input");
+    institutePositionInputField.classList.add("form-control");
+    institutePositionInputField.setAttribute("type", "text");
+    institutePositionInputField.setAttribute("placeholder", "Position");
+
+    divInstitutePositionField.appendChild(institutePositionIcon);
+    divInstitutePositionField.appendChild(institutePositionInputField);
+
+    // InstituteDuration Field
+    let divInstituteDurationField = document.createElement("div");
+    divInstituteDurationField.classList.add("inner-addon");
+    divInstituteDurationField.classList.add("right-addon");
+    divInstituteDurationField.classList.add("form-group");
+    divInstituteDurationField.classList.add("mt-4");
+
+    let instituteDurationIcon = document.createElement("i");
+    instituteDurationIcon.classList.add("icon");
+    instituteDurationIcon.classList.add("fas");
+    instituteDurationIcon.classList.add("fa-clock");
+
+    let instituteDurationInputField = document.createElement("input");
+    instituteDurationInputField.classList.add("form-control");
+    instituteDurationInputField.setAttribute("type", "text");
+    instituteDurationInputField.setAttribute("placeholder", "Duration");
+
+    divInstituteDurationField.appendChild(instituteDurationIcon);
+    divInstituteDurationField.appendChild(instituteDurationInputField);
+
+    // InstituteDescription Field
+    let divInstituteDescriptionField = document.createElement("div");
+    divInstituteDescriptionField.classList.add("inner-addon");
+    divInstituteDescriptionField.classList.add("right-addon");
+    divInstituteDescriptionField.classList.add("form-group");
+    divInstituteDescriptionField.classList.add("mt-4");
+
+    let instituteDescriptionIcon = document.createElement("i");
+    instituteDescriptionIcon.classList.add("icon");
+    instituteDescriptionIcon.classList.add("fas");
+    instituteDescriptionIcon.classList.add("fa-file-invoice");
+
+    let instituteDescriptionInputField = document.createElement("textarea");
+    instituteDescriptionInputField.classList.add("form-control");
+    instituteDescriptionInputField.setAttribute("type", "text");
+    instituteDescriptionInputField.setAttribute("placeholder", "Description");
+
+    divInstituteDescriptionField.appendChild(instituteDescriptionIcon);
+    divInstituteDescriptionField.appendChild(instituteDescriptionInputField);
+
+    // ExpDiv appending starts
+    divExp.appendChild(hr);
+    divExp.appendChild(divInstituteNameField);
+    divExp.appendChild(divInstitutePositionField);
+    divExp.appendChild(divInstituteDurationField);
+    divExp.appendChild(divInstituteDescriptionField);
+
+    // Row div which contains one Exp
+    divRow.appendChild(divExp);
+
+    // RowDiv added dynamically
+    let expContainer = document.getElementById("expContainer");
+    let addMoreExpBtn = document.getElementById("addMoreExpBtn");
+    expContainer.insertBefore(divRow, addMoreExpBtn);
+  };
   return (
     <div className="container">
       <Heading headingName="Experience Details" />
-      <div className="text-center">
+      <div className="text-center" id="expContainer">
         <div className="row">
           {/* 1st Column */}
-          <div className="col-md-6 px-5">
+          <div className="px-5" id="exp">
             <h5>
-              <i className="fas fa-check-circle"></i> Experience 1
+              <i className="fas fa-check-circle"></i> Experience
             </h5>
             <div className="inner-addon right-addon form-group mt-4">
               <i className="icon fas fa-building"></i>
@@ -95,91 +202,17 @@ function Experience() {
               ></textarea>
             </div>
           </div>
-          {/* 2nd Column */}
-          <div className="col-md-6 px-5">
-            <h5>
-              <i className="fas fa-check-circle"></i> Experience 2
-            </h5>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-building"></i>
-              <input
-                type="text"
-                id="exp2InstituteField"
-                placeholder="Institute Name"
-                className="form-control"
-                value={formData.experience.exp2InstituteValue}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    experience: {
-                      ...formData.experience,
-                      exp2InstituteValue: e.target.value,
-                    },
-                  });
-                }}
-              />
-            </div>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-user-tie"></i>
-              <input
-                type="text"
-                id="exp2PositionField"
-                placeholder="Position"
-                className="form-control"
-                value={formData.experience.exp2PositionValue}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    experience: {
-                      ...formData.experience,
-                      exp2PositionValue: e.target.value,
-                    },
-                  });
-                }}
-              />
-            </div>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-clock"></i>
-              <input
-                type="text"
-                id="exp2DurationField"
-                placeholder="Duration"
-                className="form-control"
-                value={formData.experience.exp2DurationValue}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    experience: {
-                      ...formData.experience,
-                      exp2DurationValue: e.target.value,
-                    },
-                  });
-                }}
-              />
-            </div>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-file-invoice"></i>
-              <textarea
-                type="text"
-                id="exp2DescriptionField"
-                placeholder="Description"
-                className="form-control"
-                value={formData.experience.exp2DescriptionValue}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    experience: {
-                      ...formData.experience,
-                      exp2DescriptionValue: e.target.value,
-                    },
-                  });
-                }}
-              ></textarea>
-            </div>
-          </div>
         </div>
+        <div className="text-center mt-5" id="addMoreExpBtn">
+          <button
+            onClick={(e) => addMoreExpFunc(e)}
+            className="btn btn-warning"
+          >
+            Add More Experience
+          </button>
+        </div>
+        <SaveNext text="Save &amp; Next" link="/extra" func={experienceFunc} />
       </div>
-      <SaveNext text="Save &amp; Next" link="/extra" func={experienceFunc} />
     </div>
   );
 }

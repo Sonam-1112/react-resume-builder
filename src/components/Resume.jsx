@@ -22,12 +22,20 @@ function Resume() {
                   {formData.personal.lastNameValue}
                 </p>
                 <p id="emailT">
-                  <i className="fas fa-envelope"></i>{" "}
-                  {formData.personal.emailValue}
+                  {formData.personal.emailValue ? (
+                    <div>
+                      <i className="fas fa-envelope"></i>{" "}
+                      {formData.personal.emailValue}
+                    </div>
+                  ) : null}
                 </p>
                 <p id="contactT">
-                  <i className="icon fas fa-phone-square-alt"></i>{" "}
-                  {formData.personal.phoneValue}
+                  {formData.personal.phoneValue ? (
+                    <div>
+                      <i className="fas fa-phone-square-alt"></i>{" "}
+                      {formData.personal.phoneValue}
+                    </div>
+                  ) : null}
                 </p>
 
                 {formData.personal.portfolioValue ? (
@@ -38,6 +46,7 @@ function Resume() {
                       <a
                         id="portfolioT"
                         target="_blank"
+                        rel="noreferrer"
                         href={formData.personal.portfolioValue}
                       >
                         PortFolio
@@ -51,6 +60,7 @@ function Resume() {
                     <a
                       id="linkT"
                       target="_blank"
+                      rel="noreferrer"
                       href={formData.personal.linkedinValue}
                     >
                       LinkedIn
@@ -63,6 +73,7 @@ function Resume() {
                     <a
                       id="fbT"
                       target="_blank"
+                      rel="noreferrer"
                       href={formData.personal.facebookValue}
                     >
                       Facebook
@@ -75,6 +86,7 @@ function Resume() {
                     <a
                       id="gitT"
                       target="_blank"
+                      rel="noreferrer"
                       href={formData.personal.githubValue}
                     >
                       Github
@@ -87,6 +99,7 @@ function Resume() {
                     <a
                       id="gitT"
                       target="_blank"
+                      rel="noreferrer"
                       href={formData.personal.twitterValue}
                     >
                       Twitter
@@ -99,6 +112,7 @@ function Resume() {
                     <a
                       id="instaT"
                       target="_blank"
+                      rel="noreferrer"
                       href={formData.personal.instagramValue}
                     >
                       Instagram
@@ -337,7 +351,7 @@ function Resume() {
             </div>
             <button
               onClick={(e) => printResume(e)}
-              className="btn mx-auto btn-info background w-25 text-dark"
+              className="btn mx-auto btn-info d-print-none background w-25 text-dark"
             >
               Print Resume
             </button>

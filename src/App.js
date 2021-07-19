@@ -1,4 +1,4 @@
-import React,{useState,useMemo} from 'react'
+import React,{useState} from 'react'
 import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Login from './components/Login'
@@ -8,14 +8,13 @@ import Educational from './components/Educational.jsx'
 import Projects from './components/Projects.jsx'
 import Experience from './components/Experience.jsx'
 import Extra from './components/Extra.jsx'
-import { BrowserRouter,Switch,Route } from 'react-router-dom'
+import { BrowserRouter,Route } from 'react-router-dom'
 import {InfoContext} from './components/InfoContext'
 import Resume from './components/Resume'
 import ProtectedRoute from './ProtectedRoute'
 // import Pagination from './components/Pagination.jsx'
 
 const App = () => {
-    const [isAuth,setIsAuth] = useState(false)
     const defaultValue = {
         isAuth:{
             isAuthValue:false
