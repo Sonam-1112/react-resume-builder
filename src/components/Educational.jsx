@@ -18,6 +18,13 @@ function Educational() {
     });
   };
 
+  const handleDelete = (e, key) => {
+    setFormData({
+      ...formData,
+      educational: formData.educational.filter((data, index) => index !== key),
+    });
+  };
+
   return (
     <div className="container">
       <Heading headingName="Educational Details" />
@@ -25,7 +32,20 @@ function Educational() {
         {formData.educational.map((val, key) => (
           <div className="row" key={key}>
             <div className="px-5">
-              <div className="inner-addon right-addon form-group mt-4">
+              <h5 className="mt-4 d-flex justify-content-between">
+                <div>
+                  <i className="fas fa-graduation-cap"></i> Education {key + 1}
+                </div>
+                {key ? (
+                  <button
+                    onClick={(e) => handleDelete(e, key)}
+                    className="btn btn-sm btn-danger"
+                  >
+                    Delete
+                  </button>
+                ) : null}
+              </h5>
+              <div className="inner-addon right-addon form-group mt-2">
                 <i className="icon fas fa-school"></i>
                 <input
                   type="text"

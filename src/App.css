@@ -26,10 +26,12 @@
 }
 
 /* add padding  */
-.left-addon input {
+.left-addon input,
+.left-addon .input-group input {
   padding-left: 30px;
 }
-.right-addon input {
+.right-addon input,
+.left-addon .input-group input {
   padding-right: 30px;
 }
 

@@ -26,6 +26,18 @@ function Extra() {
     });
   };
 
+  const handleSkillDelete = (e, key) => {
+    setFormData({
+      ...formData,
+      skill: formData.skill.filter((data, index) => index !== key),
+    });
+  };
+  const handleInterestDelete = (e, key) => {
+    setFormData({
+      ...formData,
+      interest: formData.interest.filter((data, index) => index !== key),
+    });
+  };
   return (
     <div className="container">
       <Heading headingName="Extra Details" />
@@ -38,19 +50,29 @@ function Extra() {
             </h5>
             {formData.skill.map((val, key) => (
               <div
-                className="inner-addon right-addon form-group mt-4"
+                className="inner-addon right-addon form-group mt-2"
                 key={key}
               >
-                <i className="icon fas fa-certificate"></i>
-                <input
-                  type="text"
-                  placeholder="Your Skill"
-                  className="form-control"
-                  value={formData.skill[key].skillValue}
-                  onChange={(e) => {
-                    handleSkillChange(e.target.value, key, "skillValue");
-                  }}
-                />
+                <div class="input-group mb-3 w-75 mx-auto">
+                  <input
+                    type="text"
+                    placeholder="Your Skill"
+                    className="form-control"
+                    value={formData.skill[key].skillValue}
+                    onChange={(e) => {
+                      handleSkillChange(e.target.value, key, "skillValue");
+                    }}
+                  />
+                  <div class="input-group-append">
+                    <button
+                      onClick={(e) => handleSkillDelete(e, key)}
+                      className=" btn btn-danger"
+                    >
+                      -
+                    </button>
+                  </div>
+                  <i className="icon fas fa-certificate"></i>
+                </div>
                 <hr />
               </div>
             ))}
@@ -79,20 +101,38 @@ function Extra() {
               <i className="fas fa-check-circle"></i> Interests
             </h5>
             {formData.interest.map((val, key) => (
-              <div className="inner-addon right-addon form-group mt-4">
-                <i className="icon fas fa-user-plus"></i>
-                <input
-                  type="text"
-                  placeholder="Your Interest"
-                  className="form-control"
-                  value={formData.interest[key].interestValue}
-                  onChange={(e) => {
-                    handleInterestChange(e.target.value, key, "interestValue");
-                  }}
-                />
+              <div
+                className="inner-addon right-addon form-group mt-2"
+                key={key}
+              >
+                <div class="input-group mb-3 w-75 mx-auto">
+                  <input
+                    type="text"
+                    placeholder="Your Interest"
+                    className="form-control"
+                    value={formData.interest[key].interestValue}
+                    onChange={(e) => {
+                      handleInterestChange(
+                        e.target.value,
+                        key,
+                        "interestValue"
+                      );
+                    }}
+                  />
+                  <div class="input-group-append">
+                    <button
+                      onClick={(e) => handleInterestDelete(e, key)}
+                      className=" btn btn-danger"
+                    >
+                      -
+                    </button>
+                  </div>
+                  <i className="icon fas fa-certificate"></i>
+                </div>
                 <hr />
               </div>
             ))}
+
             <div className="text-center mt-5" id="addMoreInterestBtn">
               <button
                 onClick={(e) => {

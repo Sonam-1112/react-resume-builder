@@ -18,17 +18,33 @@ function Experience() {
     });
   };
 
+  const handleDelete = (e, key) => {
+    setFormData({
+      ...formData,
+      experience: formData.experience.filter((data, index) => index !== key),
+    });
+  };
   return (
     <div className="container">
       <Heading headingName="Experience Details" />
       <div className="text-center" id="expContainer">
         {formData.experience.map((val, key) => (
           <div className="row" key={key}>
-            {/* 1st Column */}
             <div className="px-5" id="exp">
-              <h5 className="mt-4">
-                <i className="fas fa-check-circle"></i> Experience {key + 1}
+              <h5 className="mt-4 d-flex justify-content-between">
+                <div>
+                  <i className="fas fa-check-circle"></i> Experience {key + 1}
+                </div>
+                {key ? (
+                  <button
+                    onClick={(e) => handleDelete(e, key)}
+                    className="btn btn-sm btn-danger"
+                  >
+                    Delete
+                  </button>
+                ) : null}
               </h5>
+
               <div className="inner-addon right-addon form-group mt-4">
                 <i className="icon fas fa-building"></i>
                 <input
