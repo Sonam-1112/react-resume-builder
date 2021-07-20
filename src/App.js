@@ -36,49 +36,27 @@ const App = () => {
             schoolFromDateValue:'',
             schoolToDateValue:'',
             schoolQualificationValue:'',
-            schoolDescriptionValue:'',
-            clgNameValue:'',
-            clgFromDateValue:'',
-            clgToDateValue:'',
-            clgQualificationValue:'',
-            clgDescriptionValue:''
+            schoolDescriptionValue:''
         }],
-        projects:{
-            pro1TitleValue:'',
-            pro1LinkValue:'',
-            pro1DescriptionValue:'',
-            pro2TitleValue:'',
-            pro2LinkValue:'',
-            pro2DescriptionValue:'',
-            pro3TitleValue:'',
-            pro3LinkValue:'',
-            pro3DescriptionValue:''
-        },
-        experience:{
-            exp1InstituteValue:'',
-            exp1PositionValue:'',
-            exp1DurationValue:'',
-            exp1DescriptionValue:'',
-            exp2InstituteValue:'',
-            exp2PositionValue:'',
-            exp2DurationValue:'',
-            exp2DescriptionValue:''
-        },
-        extra:{
-            skill1Value:'',
-            skill2Value:'',
-            skill3Value:'',
-            skill4Value:'',
-            skill5Value:'',
-            skill6Value:'',
-            interest1Value:'',
-            interest2Value:'',
-            interest3Value:'',
-            interest4Value:'',
-            interest5Value:'',
-            interest6Value:'',
-        }
-        
+        projects:[{
+            proTitleValue:'',
+            proLinkValue:'',
+            proDescriptionValue:''
+        }],
+        experience:[{
+            expInstituteValue:'',
+            expPositionValue:'',
+            expDurationValue:'',
+            expDescriptionValue:''
+        }],
+        skill:
+        [{
+            skillValue:''
+        }],
+        interest:
+        [{
+            interestValue:''
+        }]
     }
     const [formData,setFormData] = useState(defaultValue);
     // settFormData({...formData,personal: {

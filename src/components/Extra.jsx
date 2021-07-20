@@ -9,55 +9,23 @@ function Extra() {
     console.log("ExtraFunc");
   };
 
-  const addMoreSkillFunc = () => {
-    let divSkillField = document.createElement("div");
-    divSkillField.classList.add("inner-addon");
-    divSkillField.classList.add("right-addon");
-    divSkillField.classList.add("form-group");
-    divSkillField.classList.add("mt-4");
-
-    let skillIcon = document.createElement("i");
-    skillIcon.classList.add("icon");
-    skillIcon.classList.add("fas");
-    skillIcon.classList.add("fa-certificate");
-
-    let skillInputField = document.createElement("input");
-    skillInputField.classList.add("form-control");
-    skillInputField.setAttribute("type", "text");
-    skillInputField.setAttribute("placeholder", "Your Skill");
-
-    divSkillField.appendChild(skillIcon);
-    divSkillField.appendChild(skillInputField);
-
-    let skillsCol = document.getElementById("skills-col");
-    let addMoreSkillBtn = document.getElementById("addMoreSkillBtn");
-    skillsCol.insertBefore(divSkillField, addMoreSkillBtn);
+  const handleSkillChange = (value, key, fieldName) => {
+    const skillData = [...formData.skill];
+    skillData[key][fieldName] = value;
+    setFormData({
+      ...formData,
+      skill: [...skillData],
+    });
+  };
+  const handleInterestChange = (value, key, fieldName) => {
+    const interestData = [...formData.interest];
+    interestData[key][fieldName] = value;
+    setFormData({
+      ...formData,
+      interest: [...interestData],
+    });
   };
 
-  const addMoreInterestFunc = () => {
-    let divInterestField = document.createElement("div");
-    divInterestField.classList.add("inner-addon");
-    divInterestField.classList.add("right-addon");
-    divInterestField.classList.add("form-group");
-    divInterestField.classList.add("mt-4");
-
-    let interestIcon = document.createElement("i");
-    interestIcon.classList.add("icon");
-    interestIcon.classList.add("fas");
-    interestIcon.classList.add("fa-user-plus");
-
-    let interestInputField = document.createElement("input");
-    interestInputField.classList.add("form-control");
-    interestInputField.setAttribute("type", "text");
-    interestInputField.setAttribute("placeholder", "Your Interest");
-
-    divInterestField.appendChild(interestIcon);
-    divInterestField.appendChild(interestInputField);
-
-    let interestsCol = document.getElementById("interests-col");
-    let addMoreInterestBtn = document.getElementById("addMoreInterestBtn");
-    interestsCol.insertBefore(divInterestField, addMoreInterestBtn);
-  };
   return (
     <div className="container">
       <Heading headingName="Extra Details" />
@@ -68,28 +36,37 @@ function Extra() {
             <h5>
               <i className="fas fa-check-circle"></i> Skills/Languages
             </h5>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-certificate"></i>
-              <input
-                type="text"
-                id="skill1Field"
-                placeholder="Your Skill"
-                className="form-control"
-                value={formData.extra.skill1Value}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    extra: {
-                      ...formData.extra,
-                      skill1Value: e.target.value,
-                    },
-                  });
-                }}
-              />
-            </div>
+            {formData.skill.map((val, key) => (
+              <div
+                className="inner-addon right-addon form-group mt-4"
+                key={key}
+              >
+                <i className="icon fas fa-certificate"></i>
+                <input
+                  type="text"
+                  placeholder="Your Skill"
+                  className="form-control"
+                  value={formData.skill[key].skillValue}
+                  onChange={(e) => {
+                    handleSkillChange(e.target.value, key, "skillValue");
+                  }}
+                />
+                <hr />
+              </div>
+            ))}
             <div className="text-center mt-5" id="addMoreSkillBtn">
               <button
-                onClick={(e) => addMoreSkillFunc(e)}
+                onClick={(e) => {
+                  setFormData({
+                    ...formData,
+                    skill: [
+                      ...formData.skill,
+                      {
+                        skillValue: "",
+                      },
+                    ],
+                  });
+                }}
                 className="btn btn-warning"
               >
                 Add More Skills
@@ -101,29 +78,34 @@ function Extra() {
             <h5>
               <i className="fas fa-check-circle"></i> Interests
             </h5>
-            <div className="inner-addon right-addon form-group mt-4">
-              <i className="icon fas fa-user-plus"></i>
-              <input
-                type="text"
-                id="interest1Field"
-                placeholder="Your Interest"
-                className="form-control"
-                value={formData.extra.interest1Value}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    extra: {
-                      ...formData.extra,
-                      interest1Value: e.target.value,
-                    },
-                  });
-                }}
-              />
-            </div>
-
+            {formData.interest.map((val, key) => (
+              <div className="inner-addon right-addon form-group mt-4">
+                <i className="icon fas fa-user-plus"></i>
+                <input
+                  type="text"
+                  placeholder="Your Interest"
+                  className="form-control"
+                  value={formData.interest[key].interestValue}
+                  onChange={(e) => {
+                    handleInterestChange(e.target.value, key, "interestValue");
+                  }}
+                />
+                <hr />
+              </div>
+            ))}
             <div className="text-center mt-5" id="addMoreInterestBtn">
               <button
-                onClick={(e) => addMoreInterestFunc(e)}
+                onClick={(e) => {
+                  setFormData({
+                    ...formData,
+                    interest: [
+                      ...formData.interest,
+                      {
+                        interestValue: "",
+                      },
+                    ],
+                  });
+                }}
                 className="btn btn-warning"
               >
                 Add More Interests

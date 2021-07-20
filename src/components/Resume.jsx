@@ -5,8 +5,6 @@ function Resume() {
   const { formData, setFormData } = useContext(InfoContext);
   const printResume = (e) => {
     e.preventDefault();
-    console.log(formData.personal.firstNameValue);
-    console.log(formData.personal.lastNameValue);
     window.print();
   };
   return (
@@ -121,7 +119,8 @@ function Resume() {
                 ) : null}
 
                 <div className="inner-container">
-                  {formData.extra.skill1Value ? (
+                  {formData.skill.map((val, key) => console.log(key, val))}
+                  {/* {formData.extra.skill1Value ? (
                     <div>
                       <hr />
                       <h4>Skills/languages</h4>
@@ -132,40 +131,18 @@ function Resume() {
                       <i className="fas fa-certificate"></i>{" "}
                       {formData.extra.skill1Value}
                     </p>
-                  ) : null}
-                  {formData.extra.skill2Value ? (
-                    <p>
-                      <i className="fas fa-certificate"></i>{" "}
-                      {formData.extra.skill2Value}
-                    </p>
-                  ) : null}
-                  {formData.extra.skill3Value ? (
-                    <p>
-                      <i className="fas fa-certificate"></i>{" "}
-                      {formData.extra.skill3Value}
-                    </p>
-                  ) : null}
-                  {formData.extra.skill4Value ? (
-                    <p>
-                      <i className="fas fa-certificate"></i>{" "}
-                      {formData.extra.skill4Value}
-                    </p>
-                  ) : null}
-                  {formData.extra.skill5Value ? (
-                    <p>
-                      <i className="fas fa-certificate"></i>{" "}
-                      {formData.extra.skill5Value}
-                    </p>
-                  ) : null}
-                  {formData.extra.skill6Value ? (
-                    <p>
-                      <i className="fas fa-certificate"></i>{" "}
-                      {formData.extra.skill6Value}
-                    </p>
-                  ) : null}
+                  ) : null} */}
                 </div>
                 <div className="inner-container">
-                  {formData.extra.interest1Value ? (
+                  <h4>Interests</h4>
+                  {formData.interest.map((val, key) => (
+                    <div key={key}>
+                      <hr className="mt-1 mb-1" />
+                      <i className="icon fas fa-user-plus"></i>
+                      {formData.interest[key].interestValue}
+                    </div>
+                  ))}
+                  {/* {formData.extra.interest1Value ? (
                     <div>
                       <hr />
                       <h4>Interests</h4>
@@ -176,37 +153,7 @@ function Resume() {
                       <i className="fas fa-user-plus"></i>{" "}
                       {formData.extra.interest1Value}
                     </p>
-                  ) : null}
-                  {formData.extra.interest2Value ? (
-                    <p>
-                      <i className="fas fa-user-plus"></i>{" "}
-                      {formData.extra.interest2Value}
-                    </p>
-                  ) : null}
-                  {formData.extra.interest3Value ? (
-                    <p>
-                      <i className="fas fa-user-plus"></i>{" "}
-                      {formData.extra.interest3Value}
-                    </p>
-                  ) : null}
-                  {formData.extra.interest4Value ? (
-                    <p>
-                      <i className="fas fa-user-plus"></i>{" "}
-                      {formData.extra.interest4Value}
-                    </p>
-                  ) : null}
-                  {formData.extra.interest5Value ? (
-                    <p>
-                      <i className="fas fa-user-plus"></i>{" "}
-                      {formData.extra.interest5Value}
-                    </p>
-                  ) : null}
-                  {formData.extra.interest6Value ? (
-                    <p>
-                      <i className="fas fa-user-plus"></i>{" "}
-                      {formData.extra.interest6Value}
-                    </p>
-                  ) : null}
+                  ) : null} */}
                 </div>
               </div>
             </div>
