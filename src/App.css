@@ -5,6 +5,23 @@
   box-shadow: 5px 5px 15px 5px rgb(199, 192, 192);
 }
 
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #037fff;
+  border-radius: 50px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #a4acc4;
+}
+
+span {
+  color: #037fff;
+}
+
 /* enable absolute positioning */
 .inner-addon {
   position: relative;
