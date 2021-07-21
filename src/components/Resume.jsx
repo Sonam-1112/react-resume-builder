@@ -15,10 +15,9 @@ function Resume() {
             <div className="col-md-4 text-center py-5 background">
               {/* <img id="imgT" src="profile.jpg" className="img-fluid proImg" alt="" /> */}
               <div className="container">
-                <p id="nameT1">
-                  {formData.personal.firstNameValue}{" "}
-                  {formData.personal.lastNameValue}
-                </p>
+                <h5>
+                  <i class="fas fa-user"></i> Personal Details
+                </h5>
                 <p id="emailT">
                   {formData.personal.emailValue ? (
                     <div>
@@ -119,7 +118,9 @@ function Resume() {
                 ) : null}
 
                 <div className="inner-container">
-                  <h5>Skills/languages</h5>
+                  <h5>
+                    <i class="fas fa-palette"></i> Skills/languages
+                  </h5>
                   {formData.skill.map((val, key) => (
                     <div key={key}>
                       {formData.skill[key].skillValue ? (
@@ -132,7 +133,9 @@ function Resume() {
                   ))}
                 </div>
                 <div className="inner-container mt-5">
-                  <h5>Interests</h5>
+                  <h5>
+                    <i class="fas fa-pencil-ruler"></i> Interests
+                  </h5>
                   {formData.interest.map((val, key) => (
                     <div key={key}>
                       {formData.interest[key].interestValue ? (

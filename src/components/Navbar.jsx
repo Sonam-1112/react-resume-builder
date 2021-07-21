@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 function Navbar({ isAuth }) {
   return isAuth ? (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark position-fixed fixed-top">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/personal">
             Resume Builder

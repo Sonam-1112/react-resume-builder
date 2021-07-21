@@ -46,7 +46,7 @@ function Extra() {
           {/* Col 1 */}
           <div className="col-md-6 px-5" id="skills-col">
             <h5>
-              <i className="fas fa-check-circle"></i> Skills/Languages
+              <i class="fas fa-palette"></i> Skills/Languages
             </h5>
             {formData.skill.map((val, key) => (
               <div
@@ -76,7 +76,7 @@ function Extra() {
                 <hr />
               </div>
             ))}
-            <div className="text-center mt-5" id="addMoreSkillBtn">
+            <div className="text-center mt-3 mb-4" id="addMoreSkillBtn">
               <button
                 onClick={(e) => {
                   setFormData({
@@ -98,7 +98,7 @@ function Extra() {
           {/* Col 2 */}
           <div className="col-md-6 px-5" id="interests-col">
             <h5>
-              <i className="fas fa-check-circle"></i> Interests
+              <i class="fas fa-pencil-ruler"></i> Interests
             </h5>
             {formData.interest.map((val, key) => (
               <div
@@ -133,7 +133,7 @@ function Extra() {
               </div>
             ))}
 
-            <div className="text-center mt-5" id="addMoreInterestBtn">
+            <div className="text-center mt-3 mb-4" id="addMoreInterestBtn">
               <button
                 onClick={(e) => {
                   setFormData({
