@@ -251,7 +251,9 @@ function Resume() {
           </div>
         </div>
       ) : (
-        <h4 className="text-center mt-5">No data to display</h4>
+        <h4 className="text-center" style={{ "margin-top": "20rem" }}>
+          No data to display
+        </h4>
       )}
     </>
   );
