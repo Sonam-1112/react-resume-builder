@@ -23,6 +23,11 @@ body::-webkit-scrollbar {
   width: 8px;
 }
 
+/* body::-webkit-scrollbar-button {
+  height: 10px;
+  background: rgb(243, 231, 55);
+} */
+
 body::-webkit-scrollbar-thumb {
   background: #77bbfa;
   border-radius: 50px;
