@@ -154,7 +154,7 @@ function Extra() {
           </div>
         </div>
       </div>
-      <SaveNext text="Preview Resume" link="/preview-resume" func={extraFunc} />
+      <SaveNext text="Preview Resume" link="/templates" func={extraFunc} />
     </div>
   );
 }

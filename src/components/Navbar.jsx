@@ -72,6 +72,39 @@ function Navbar({ isAuth }) {
                   Extra
                 </NavLink>
               </li>
+              <li class="nav-item dropdown">
+                <NavLink
+                  className="nav-link dropdown-toggle"
+                  id="navbarDropdown"
+                  activeClassName="active"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  to="/templates"
+                >
+                  Templates
+                </NavLink>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume"
+                    >
+                      Template 1
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-2"
+                    >
+                      Template 2
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

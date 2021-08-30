@@ -8,9 +8,11 @@ import Educational from './components/Educational.jsx'
 import Projects from './components/Projects.jsx'
 import Experience from './components/Experience.jsx'
 import Extra from './components/Extra.jsx'
+import Templates from './components/Templates'
 import { BrowserRouter,Route } from 'react-router-dom'
 import {InfoContext} from './components/InfoContext'
 import Resume from './components/Resume'
+import Resume2 from './components/Resume2'
 import ProtectedRoute from './ProtectedRoute'
 // import Pagination from './components/Pagination.jsx'
 
@@ -84,7 +86,9 @@ const App = () => {
                     <ProtectedRoute path='/projects' Component={Projects} isAuth={formData.isAuth.isAuthValue}/>
                     <ProtectedRoute path='/experience' Component={Experience} isAuth={formData.isAuth.isAuthValue}/>
                     <ProtectedRoute path='/extra' Component={Extra} isAuth={formData.isAuth.isAuthValue}/>
+                    <ProtectedRoute path='/templates' Component={Templates} isAuth={formData.isAuth.isAuthValue}/>
                     <ProtectedRoute path='/preview-resume' Component={Resume} isAuth={formData.isAuth.isAuthValue}/>
+                    <ProtectedRoute path='/preview-resume-2' Component={Resume2} isAuth={formData.isAuth.isAuthValue}/>
                 </InfoContext.Provider>
                 {/* <Pagination/> */}
             </div>
