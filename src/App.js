@@ -67,7 +67,7 @@ const App = () => {
     
     return (
         <BrowserRouter>
-            <div>
+            <div> 
                 <Navbar isAuth={formData.isAuth.isAuthValue}/>
                 <InfoContext.Provider value={{formData,setFormData}}>
                     <Route path="/"/>
