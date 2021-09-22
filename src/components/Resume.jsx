@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { InfoContext } from "./InfoContext";
+import "../css/template.css";
 
 function Resume() {
   const { formData, setFormData } = useContext(InfoContext);
@@ -10,11 +11,11 @@ function Resume() {
   return (
     <>
       {formData.personal.firstNameValue ? (
-        <div className="container" id="cv-template">
+        <div className="container w-75 template-container" id="cv-template">
           <div className="row">
             <div className="col-md-4 text-center py-5 background">
               {/* <img id="imgT" src="profile.jpg" className="img-fluid proImg" alt="" /> */}
-              <div className="container">
+              <div className="inner-template-container">
                 <h5>
                   <i class="fas fa-user"></i> Personal Details
                 </h5>
@@ -117,7 +118,7 @@ function Resume() {
                   </p>
                 ) : null}
 
-                <div className="inner-container">
+                <div>
                   <h5>
                     <i class="fas fa-palette"></i> Skills/languages
                   </h5>
@@ -132,7 +133,7 @@ function Resume() {
                     </div>
                   ))}
                 </div>
-                <div className="inner-container mt-5">
+                <div className="mt-5">
                   <h5>
                     <i class="fas fa-pencil-ruler"></i> Interests
                   </h5>
@@ -157,7 +158,7 @@ function Resume() {
               </h3>
 
               <div className="card mt-4">
-                <div className="card-header background">
+                <div className="card-header bg-secondary bg-gradient">
                   <h4>
                     <i className="icon fas fa-graduation-cap"></i> Educational
                     Info
@@ -191,7 +192,7 @@ function Resume() {
               </div>
 
               <div className="card mt-4">
-                <div className="card-header background">
+                <div className="card-header bg-secondary bg-gradient">
                   <h4>
                     <i className="fas fa-tasks"></i> Projects
                   </h4>
@@ -215,7 +216,7 @@ function Resume() {
                 </div>
               </div>
               <div className="card mt-4">
-                <div className="card-header background">
+                <div className="card-header bg-secondary bg-gradient">
                   <h4>
                     <i className="icon fas fa-user-tie"></i> Experience
                   </h4>
@@ -244,7 +245,7 @@ function Resume() {
             </div>
             <button
               onClick={(e) => printResume(e)}
-              className="btn mx-auto btn-info d-print-none background w-25 text-dark"
+              className="btn mx-auto bg-success bg-gradient d-print-none background w-25 text-light"
             >
               Print Resume
             </button>

@@ -16,6 +16,7 @@ import Resume2 from './components/Resume2'
 import ProtectedRoute from './ProtectedRoute'
 // import Pagination from './components/Pagination.jsx'
 
+
 const App = () => {
     const defaultValue = {
         isAuth:{

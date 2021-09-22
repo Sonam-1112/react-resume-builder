@@ -58,11 +58,13 @@ function Educational() {
                   }}
                 />
               </div>
+              {/* <input type="text" id="datepicker" /> */}
               <div className="inner-addon right-addon form-group mt-4">
                 <i className="icon fas fa-calendar-alt"></i>
+
                 <input
                   type="text"
-                  placeholder="From Date"
+                  placeholder="From Year"
                   className="form-control"
                   required={true}
                   value={formData.educational[key].schoolFromDateValue}
@@ -75,7 +77,7 @@ function Educational() {
                 <i className="icon fas fa-calendar-alt"></i>
                 <input
                   type="text"
-                  placeholder="To Date"
+                  placeholder="To Year"
                   className="form-control"
                   required={true}
                   value={formData.educational[key].schoolToDateValue}

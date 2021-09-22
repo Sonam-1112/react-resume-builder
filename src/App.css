@@ -75,3 +75,9 @@ body::-webkit-scrollbar-track {
   background: crimson;
   color: aliceblue;
 }
+
+@media print {
+  .navbar {
+    display: none;
+  }
+}

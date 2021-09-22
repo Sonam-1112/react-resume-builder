@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { InfoContext } from "./InfoContext";
+import "../css/template.css";
 
 function Resume2() {
   const { formData, setFormData } = useContext(InfoContext);
@@ -10,7 +11,7 @@ function Resume2() {
   return (
     <>
       {formData.personal.firstNameValue ? (
-        <div className="container" id="cv-template">
+        <div className="container w-75 template-container" id="cv-template">
           <div className="row">
             <div className="col-md-8 py-5">
               <h3 id="nameT2" className="text-center">
@@ -20,7 +21,7 @@ function Resume2() {
               </h3>
 
               <div className="card mt-4">
-                <div className="card-header background">
+                <div className="card-header bg-info bg-gradient">
                   <h4>
                     <i className="icon fas fa-graduation-cap"></i> Educational
                     Info
@@ -54,7 +55,7 @@ function Resume2() {
               </div>
 
               <div className="card mt-4">
-                <div className="card-header background">
+                <div className="card-header bg-info bg-gradient">
                   <h4>
                     <i className="fas fa-tasks"></i> Projects
                   </h4>
@@ -78,7 +79,7 @@ function Resume2() {
                 </div>
               </div>
               <div className="card mt-4">
-                <div className="card-header background">
+                <div className="card-header bg-info bg-gradient">
                   <h4>
                     <i className="icon fas fa-user-tie"></i> Experience
                   </h4>
@@ -107,8 +108,7 @@ function Resume2() {
             </div>
             <div className="col-md-4 text-center py-5 background">
               {/* <img id="imgT" src="profile.jpg" className="img-fluid proImg" alt="" /> */}
-              Hiiiiiiiiiiiiiiiiii
-              <div className="container">
+              <div className="resume2-inner-container">
                 <h5>
                   <i class="fas fa-user"></i> Personal Details
                 </h5>
@@ -245,7 +245,7 @@ function Resume2() {
             </div>
             <button
               onClick={(e) => printResume(e)}
-              className="btn mx-auto btn-info d-print-none background w-25 text-dark"
+              className="btn mx-auto bg-success bg-gradient d-print-none background w-25 text-light"
             >
               Print Resume
             </button>

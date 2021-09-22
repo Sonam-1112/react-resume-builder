@@ -85,7 +85,7 @@ function Navbar({ isAuth }) {
                   Templates
                 </NavLink>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
+                  <li className="text-light">
                     <NavLink
                       className="dropdown-item nav-link text-dark"
                       activeClassName="active"
