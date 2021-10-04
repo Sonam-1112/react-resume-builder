@@ -64,18 +64,6 @@ function Templates() {
           </Link>
         </div>
       </div>
-      <div className="row mx-auto text-center">
-        <div className="col-md-6">
-          <Link to="/preview-resume-11" className="btn m-3 btn-primary w-50">
-            Select Template 11
-          </Link>
-        </div>
-        <div className="col-md-6">
-          <Link to="/preview-resume-12" className="btn m-3 btn-primary w-50">
-            Select Template 12
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }
