@@ -175,24 +175,6 @@ function Navbar({ isAuth }) {
                       Template 10
                     </NavLink>
                   </li>
-                  <li>
-                    <NavLink
-                      className="dropdown-item nav-link text-dark"
-                      activeClassName="active"
-                      to="/preview-resume-11"
-                    >
-                      Template 11
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      className="dropdown-item nav-link text-dark"
-                      activeClassName="active"
-                      to="/preview-resume-12"
-                    >
-                      Template 12
-                    </NavLink>
-                  </li>
                 </ul>
               </li>
             </ul>

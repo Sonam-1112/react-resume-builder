@@ -21,8 +21,6 @@ import Resume7 from './components/Resume7'
 import Resume8 from './components/Resume8'
 import Resume9 from './components/Resume9'
 import Resume10 from './components/Resume10'
-import Resume11 from './components/Resume11'
-import Resume12 from './components/Resume12'
 import ProtectedRoute from './ProtectedRoute'
 // import Pagination from './components/Pagination.jsx'
 
@@ -108,8 +106,6 @@ const App = () => {
                     <ProtectedRoute path='/preview-resume-8' Component={Resume8} isAuth={formData.isAuth.isAuthValue}/>
                     <ProtectedRoute path='/preview-resume-9' Component={Resume9} isAuth={formData.isAuth.isAuthValue}/>
                     <ProtectedRoute path='/preview-resume-10' Component={Resume10} isAuth={formData.isAuth.isAuthValue}/>
-                    <ProtectedRoute path='/preview-resume-11' Component={Resume11} isAuth={formData.isAuth.isAuthValue}/>
-                    <ProtectedRoute path='/preview-resume-12' Component={Resume12} isAuth={formData.isAuth.isAuthValue}/>
                 </InfoContext.Provider>
                 {/* <Pagination/> */}
             </div>
