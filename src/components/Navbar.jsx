@@ -89,7 +89,7 @@ function Navbar({ isAuth }) {
                     <NavLink
                       className="dropdown-item nav-link text-dark"
                       activeClassName="active"
-                      to="/preview-resume"
+                      to="/preview-resume-1"
                     >
                       Template 1
                     </NavLink>
@@ -101,6 +101,96 @@ function Navbar({ isAuth }) {
                       to="/preview-resume-2"
                     >
                       Template 2
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-3"
+                    >
+                      Template 3
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-4"
+                    >
+                      Template 4
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-5"
+                    >
+                      Template 5
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-6"
+                    >
+                      Template 6
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-7"
+                    >
+                      Template 7
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-8"
+                    >
+                      Template 8
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-9"
+                    >
+                      Template 9
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-10"
+                    >
+                      Template 10
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-11"
+                    >
+                      Template 11
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item nav-link text-dark"
+                      activeClassName="active"
+                      to="/preview-resume-12"
+                    >
+                      Template 12
                     </NavLink>
                   </li>
                 </ul>

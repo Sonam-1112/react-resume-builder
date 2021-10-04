@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { InfoContext } from "./InfoContext";
 import "../css/template.css";
 
-function Resume() {
+function Resume1() {
   const { formData, setFormData } = useContext(InfoContext);
   const printResume = (e) => {
     e.preventDefault();
@@ -260,4 +260,4 @@ function Resume() {
   );
 }
 
-export default Resume;
+export default Resume1;
